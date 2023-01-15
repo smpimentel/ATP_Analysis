@@ -1,0 +1,64 @@
+Player
+-
+player_id PK FK >- Tournament.winner_id FK >- Match_Score.player_id FK >- Match_Stats.player_id
+name
+current_rank
+age
+turned_pro
+weight
+height
+birthplace
+style
+coach
+
+Tournament
+-
+tourney_id PK
+name
+year
+location
+date
+draw_size
+conditions
+surface
+winner_id
+
+Match_Score
+-
+match_id PK FK >- Match_Stats.match_id 
+tourney_id FK >- Tournament.tourney_id
+player_id
+round
+match_order
+score
+player_result
+
+Match_Stats
+-
+match_id PK
+player_id
+start_time
+duration
+aces
+double_faults
+first_serves_in
+first_serves_total
+first_serves_points_won
+second_serve_points_won
+second_serve_points_total
+break_points_saved
+break_points_serve_total
+service_points_won
+service_points_total
+first_serve_return_won
+first_serve_return_total
+second_serve_return_won
+second_serve_return_total
+break_points_converted
+break_points_return_total
+service_games_played
+return_games_played
+return_points_won
+return_points_total
+total_points_won
+total_points_total
